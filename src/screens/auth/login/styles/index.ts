@@ -13,12 +13,13 @@ export function loginViewStyles() {
       paddingHorizontal: spaces.s16,
     },
     formContainerStyle: {
-      height: moderateScale(400),
+      minHeight: moderateScale(400),
       width: '100%',
       backgroundColor: colors.white,
       borderRadius: moderateScale(5),
       paddingHorizontal: spaces.s26,
-      paddingVertical: spaces.s30,
+      paddingTop: spaces.s30,
+      paddingBottom: spaces.s30 + spaces.s30,
       shadowColor: colors.neutral,
       shadowOffset: {
         width: 0,
@@ -36,6 +37,11 @@ export function loginViewStyles() {
     },
     formGreetContainerStyle: {
       marginBottom: spaces.s20,
+    },
+    recoverPasswordContainerStyle: {
+      textDecorationLine: 'underline',
+      alignSelf: 'flex-end',
+      marginTop: spaces.s20,
     },
   });
 }

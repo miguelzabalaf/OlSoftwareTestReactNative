@@ -2,13 +2,13 @@
 import {PropsWithChildren} from 'react';
 
 // Types
-import {TextStyle} from 'react-native';
+import {StyleProp, TextStyle} from 'react-native';
 
 export interface TypographyProps extends PropsWithChildren {
   color?: string;
   size?: number;
   weight?: 'Regular' | 'Medium' | 'Bold';
-  textStyles?: TextStyle;
+  textStyles?: StyleProp<TextStyle>;
   testIDVariant?: string;
 }
 

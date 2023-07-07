@@ -24,6 +24,7 @@ function LoginView(props: LoginScreenProps): JSX.Element {
     contentStyle,
     formImageStyle,
     formGreetContainerStyle,
+    recoverPasswordContainerStyle,
   } = loginViewStyles();
   return (
     <ScreenLayout>
@@ -44,6 +45,15 @@ function LoginView(props: LoginScreenProps): JSX.Element {
           <TextField placeholder={'Correo'} />
           <TextField placeholder={'Contraseña'} secureTextEntry />
           <Button>{'Ingresar'}</Button>
+          <View>
+            <Typography
+              textStyles={recoverPasswordContainerStyle}
+              size={sizes.medium}
+              weight={'Regular'}
+              color={colors.text}>
+              {'Recuperar Contraseña?'}
+            </Typography>
+          </View>
         </View>
       </View>
     </ScreenLayout>
