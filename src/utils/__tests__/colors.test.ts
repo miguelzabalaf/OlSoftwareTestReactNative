@@ -11,6 +11,7 @@ describe('colors', () => {
     expect(colors.text).toBe('#464344');
     expect(colors.textMuted).toBe('#908D86');
     expect(colors.placeholder).toBe('#C9C9C9');
-    expect(colors.nautral).toBe('#DFDFDF');
+    expect(colors.neutral).toBe('#DFDFDF');
+    expect(colors.background).toBe('#F4F5F7');
   });
 });
