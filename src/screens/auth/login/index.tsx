@@ -5,10 +5,10 @@ import React from 'react';
 import LoginView from './loginView';
 
 // Models
-import {loginViewModel} from './loginViewModel';
+import {useLoginViewModel} from './loginViewModel';
 
 function LoginScreen(): JSX.Element {
-  const loginViewModelProps = loginViewModel();
+  const loginViewModelProps = useLoginViewModel();
   return <LoginView {...loginViewModelProps} />;
 }
 
