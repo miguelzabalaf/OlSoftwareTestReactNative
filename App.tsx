@@ -1,12 +1,15 @@
+// Dependencies
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
-import Config from 'react-native-config';
+import {NavigationContainer} from '@react-navigation/native';
+
+// Stacks
+import RootStack from './src/navigation/stacks/root';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>Env: {Config.ENV}</Text>
-    </SafeAreaView>
+    <NavigationContainer>
+      <RootStack />
+    </NavigationContainer>
   );
 }
 
