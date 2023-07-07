@@ -41,4 +41,9 @@ describe('Button', () => {
     const {getByTestId} = render(<Button loading />);
     expect(getByTestId('ButtonActivityIndicatorTestID')).toBeTruthy();
   });
+
+  it('render children correctly with variantTestID', () => {
+    const {getByTestId} = render(<Button>{'childrenExample'}</Button>);
+    expect(getByTestId('ButtonTestIDTypography')).toBeTruthy();
+  });
 });

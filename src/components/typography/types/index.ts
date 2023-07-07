@@ -9,6 +9,7 @@ export interface TypographyProps extends PropsWithChildren {
   size?: number;
   weight?: 'Regular' | 'Medium' | 'Bold';
   textStyles?: TextStyle;
+  testIDVariant?: string;
 }
 
 export interface TypographyStylesProps

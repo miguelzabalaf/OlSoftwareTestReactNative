@@ -11,10 +11,14 @@ import {TypographyProps} from './types';
 import {typographyViewStyles} from './styles';
 
 function TypographyView(props: TypographyProps): JSX.Element {
-  const {children, ...typographyViewStylesProps} = props;
+  const {children, testIDVariant, ...typographyViewStylesProps} = props;
   const {textStyle} = typographyViewStyles(typographyViewStylesProps);
 
-  return <Text style={textStyle}>{children}</Text>;
+  return (
+    <Text testID={testIDVariant ?? 'TypographyTestID'} style={textStyle}>
+      {children}
+    </Text>
+  );
 }
 
 export default TypographyView;

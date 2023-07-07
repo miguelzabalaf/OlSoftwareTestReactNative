@@ -30,7 +30,11 @@ function Button(props: ButtonProps): JSX.Element {
           color={colors.white}
         />
       ) : (
-        <Typography color={colors.white} weight={'Medium'} size={sizes.medium}>
+        <Typography
+          testIDVariant={'ButtonTestIDTypography'}
+          color={colors.white}
+          weight={'Medium'}
+          size={sizes.medium}>
           {children}
         </Typography>
       )}
