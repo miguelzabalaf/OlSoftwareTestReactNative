@@ -1,10 +1,10 @@
 import React from 'react';
 import {authViewModel} from './authViewModel';
-import View from './authView';
+import AuthView from './authView';
 
 function AuthStack(): JSX.Element {
-  const props = authViewModel();
-  return <View {...props} />;
+  const authViewModelProps = authViewModel();
+  return <AuthView {...authViewModelProps} />;
 }
 
 export default AuthStack;

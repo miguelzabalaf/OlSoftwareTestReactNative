@@ -14,7 +14,7 @@ import AuthStack from '../auth';
 // Options
 import {defaultScreenOptions} from '../../options';
 
-function View(props: RootViewStackProps): JSX.Element {
+function RootView(props: RootViewStackProps): JSX.Element {
   const {} = props;
   const RootStack = createStackNavigator<RootViewStackParamList>();
   return (
@@ -27,4 +27,4 @@ function View(props: RootViewStackProps): JSX.Element {
   );
 }
 
-export default View;
+export default RootView;

@@ -1,9 +1,9 @@
 const sizes = {
-  small: 10,
-  medium: 12,
-  normal: 14,
-  large: 20,
-  extraLarge: 24,
+  small: 12,
+  medium: 14,
+  normal: 16,
+  large: 24,
+  extraLarge: 30,
 };
 
 export default sizes;

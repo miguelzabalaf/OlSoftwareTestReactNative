@@ -7,24 +7,23 @@ import {screens} from '../../constants';
 
 // Types
 import {AuthViewStackParamList, AuthViewStackProps} from './types';
-import {Text} from 'react-native';
 
 // Options
 import {defaultScreenOptions} from '../../options';
 
-function View(props: AuthViewStackProps): JSX.Element {
+// Screens
+import LoginScreen from '../../../screens/auth/login';
+
+function AuthView(props: AuthViewStackProps): JSX.Element {
   const {} = props;
   const AuthStack = createStackNavigator<AuthViewStackParamList>();
   return (
     <AuthStack.Navigator
       initialRouteName={screens.login}
       screenOptions={defaultScreenOptions()}>
-      <AuthStack.Screen
-        name={screens.login}
-        component={() => <Text>HOLAOALOA</Text>}
-      />
+      <AuthStack.Screen name={screens.login} component={LoginScreen} />
     </AuthStack.Navigator>
   );
 }
 
-export default View;
+export default AuthView;
