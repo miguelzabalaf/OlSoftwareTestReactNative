@@ -14,10 +14,16 @@ import {loginViewStyles} from './styles';
 
 // Utils
 import {colors, sizes} from '../../../utils';
+import TextField from '../../../components/textField';
 
 function LoginView(props: LoginScreenProps): JSX.Element {
   const {} = props;
-  const {formContainerStyle, contentStyle, formImageStyle} = loginViewStyles();
+  const {
+    formContainerStyle,
+    contentStyle,
+    formImageStyle,
+    formGreetContainerStyle,
+  } = loginViewStyles();
   return (
     <ScreenLayout>
       <View style={contentStyle}>
@@ -26,9 +32,16 @@ function LoginView(props: LoginScreenProps): JSX.Element {
             style={formImageStyle}
             source={require('../../../../assets/images/logo.png')}
           />
-          <Typography size={sizes.normal} weight="Medium" color={colors.black}>
-            {'Hola! Bienvenido a OL Software'}
-          </Typography>
+          <View style={formGreetContainerStyle}>
+            <Typography
+              size={sizes.normal}
+              weight="Medium"
+              color={colors.black}>
+              {'Hola! Bienvenido a OL Software'}
+            </Typography>
+          </View>
+          <TextField placeholder={'Correo'} />
+          <TextField placeholder={'Contraseña'} secureTextEntry />
         </View>
       </View>
     </ScreenLayout>

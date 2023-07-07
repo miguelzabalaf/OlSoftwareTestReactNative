@@ -9,6 +9,7 @@ const colors = {
   textMuted: '#908D86',
   placeholder: '#C9C9C9',
   neutral: '#DFDFDF',
+  border: '#EBEBEB',
 };
 
 export default colors;

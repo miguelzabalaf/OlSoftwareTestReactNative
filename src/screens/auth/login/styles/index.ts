@@ -34,5 +34,8 @@ export function loginViewStyles() {
       objectFit: 'contain',
       marginBottom: spaces.s30,
     },
+    formGreetContainerStyle: {
+      marginBottom: spaces.s20,
+    },
   });
 }
