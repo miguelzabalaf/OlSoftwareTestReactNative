@@ -7,8 +7,11 @@ import LoginView from './loginView';
 // Models
 import {useLoginViewModel} from './loginViewModel';
 
-function LoginScreen(): JSX.Element {
-  const loginViewModelProps = useLoginViewModel();
+// Types
+import {LoginScreenProps} from './types';
+
+function LoginScreen(props: LoginScreenProps): JSX.Element {
+  const loginViewModelProps = useLoginViewModel(props);
   return <LoginView {...loginViewModelProps} />;
 }
 

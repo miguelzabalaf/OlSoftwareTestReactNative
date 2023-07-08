@@ -1,5 +1,7 @@
 import {LoginScreenProps} from './types';
 
-export function useLoginViewModel(): LoginScreenProps {
-  return {};
+export function useLoginViewModel(props: LoginScreenProps) {
+  return {
+    ...props,
+  };
 }

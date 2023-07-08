@@ -1,5 +1,7 @@
+// Dependencies
+
 import {describe, it} from '@jest/globals';
 
-describe('LoginScreen', () => {
+describe('homeScreen', () => {
   it('renders correctly', () => {});
 });

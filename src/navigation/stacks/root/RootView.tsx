@@ -3,13 +3,14 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 // Constants
-import {drawers, stacks} from '../../constants';
+import {stacks} from '../../constants';
 
 // Types
 import {RootViewStackParamList, RootViewStackProps} from './types';
 
 // Stacks
 import AuthStack from '../auth';
+import DashboardStack from '../dashboard';
 
 // Options
 import {defaultScreenOptions} from '../../options';
@@ -17,12 +18,16 @@ import {defaultScreenOptions} from '../../options';
 function RootView(props: RootViewStackProps): JSX.Element {
   const {} = props;
   const RootStack = createStackNavigator<RootViewStackParamList>();
+  const isAuthenticated = true;
   return (
     <RootStack.Navigator
       initialRouteName={stacks.auth}
       screenOptions={defaultScreenOptions()}>
-      <RootStack.Screen name={stacks.auth} component={AuthStack} />
-      <RootStack.Screen name={drawers.home} component={() => null} />
+      {isAuthenticated ? (
+        <RootStack.Screen name={stacks.dashboard} component={DashboardStack} />
+      ) : (
+        <RootStack.Screen name={stacks.auth} component={AuthStack} />
+      )}
     </RootStack.Navigator>
   );
 }
