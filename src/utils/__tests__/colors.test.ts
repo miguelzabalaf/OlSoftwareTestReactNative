@@ -3,7 +3,7 @@ import colors from '../_colors';
 
 describe('colors', () => {
   it('should return the correct color', () => {
-    expect(colors.primay).toBe('#2038B7');
+    expect(colors.primary).toBe('#2038B7');
     expect(colors.secondary).toBe('#D4DDE6');
     expect(colors.tertiary).toBe('#43C0FB');
     expect(colors.black).toBe('#150F00');

@@ -14,9 +14,23 @@ import {ButtonProps} from './types';
 // Styles
 import {buttonViewStyles} from './styles';
 
-function Button(props: ButtonProps): JSX.Element {
-  const {children, loading, testIDVariant} = props;
-  const {containerStyle} = buttonViewStyles({loading});
+function ButtonView(props: ButtonProps): JSX.Element {
+  const {
+    children,
+    loading,
+    testIDVariant,
+    backgroundColor,
+    borderColor,
+    Icon,
+    small,
+    textColor,
+  } = props;
+  const {containerStyle} = buttonViewStyles({
+    loading,
+    backgroundColor,
+    borderColor,
+    small,
+  });
   return (
     <TouchableOpacity
       testID={testIDVariant ?? 'ButtonTestID'}
@@ -30,16 +44,19 @@ function Button(props: ButtonProps): JSX.Element {
           color={colors.white}
         />
       ) : (
-        <Typography
-          testIDVariant={'ButtonTestIDTypography'}
-          color={colors.white}
-          weight={'Medium'}
-          size={sizes.medium}>
-          {children}
-        </Typography>
+        <>
+          {Icon}
+          <Typography
+            testIDVariant={'ButtonTestIDTypography'}
+            color={textColor ?? colors.white}
+            weight={'Medium'}
+            size={small ? sizes.small : sizes.medium}>
+            {children}
+          </Typography>
+        </>
       )}
     </TouchableOpacity>
   );
 }
 
-export default Button;
+export default ButtonView;

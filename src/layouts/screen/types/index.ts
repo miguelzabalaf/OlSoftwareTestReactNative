@@ -3,6 +3,7 @@ import {PropsWithChildren} from 'react';
 export interface ScreenLayoutMethods {
   handleOpenMenu: () => void;
   handleCloseMenu: () => void;
+  handleToggleMenu: () => void;
 }
 
 export interface ScreenLayoutStates {

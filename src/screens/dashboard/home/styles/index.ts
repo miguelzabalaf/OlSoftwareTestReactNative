@@ -3,45 +3,58 @@ import {ScaledSheet, moderateScale} from 'react-native-size-matters';
 
 // Utils
 import {colors, spaces} from '../../../../utils';
+import {Platform} from 'react-native';
 
-export function loginViewStyles() {
+export function homeViewStyles() {
   return ScaledSheet.create({
-    contentStyle: {
-      flex: 1,
-      justifyContent: 'center',
+    containerContentStyle: {
+      marginTop: moderateScale(spaces.s16),
+      marginHorizontal: moderateScale(spaces.s16),
+    },
+    continerTopActionsStyle: {
+      flexDirection: 'row',
+      gap: moderateScale(spaces.s10),
+    },
+    lineSeparatorStyle: {
+      borderWidth: 0.5,
+      borderColor: colors.neutral,
+      marginVertical: moderateScale(spaces.s16),
+    },
+    containerStadisticsStyle: {
+      flexDirection: 'row',
+      gap: moderateScale(spaces.s16),
+      justifyContent: 'space-between',
+      marginBottom: moderateScale(spaces.s30),
+    },
+    containerStadisticItemStyle: {
       alignItems: 'center',
-      paddingHorizontal: spaces.s16,
+      gap: moderateScale(
+        Platform.select({ios: spaces.s10, default: spaces.s4}),
+      ),
     },
-    formContainerStyle: {
-      minHeight: moderateScale(400),
+    // Card
+    cardContainerStyle: {
       width: '100%',
+      height: 'auto',
       backgroundColor: colors.white,
-      borderRadius: moderateScale(5),
-      paddingHorizontal: spaces.s26,
-      paddingTop: spaces.s30,
-      paddingBottom: spaces.s30 + spaces.s30,
-      shadowColor: colors.neutral,
-      shadowOffset: {
-        width: 0,
-        height: 1,
-      },
-      shadowOpacity: 0.15,
-      shadowRadius: 1,
-      elevation: 1,
+      borderRadius: moderateScale(spaces.s16),
+      padding: moderateScale(spaces.s16),
+      gap: moderateScale(spaces.s8),
     },
-    formImageStyle: {
-      width: 200,
-      height: 100,
-      objectFit: 'contain',
-      marginBottom: spaces.s30,
+    graphycFlagsStyle: {
+      flexDirection: 'row',
+      gap: moderateScale(spaces.s16),
     },
-    formGreetContainerStyle: {
-      marginBottom: spaces.s20,
+    flagContainerStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: moderateScale(spaces.s6),
     },
-    recoverPasswordContainerStyle: {
-      textDecorationLine: 'underline',
-      alignSelf: 'flex-end',
-      marginTop: spaces.s20,
+    badgeStyle: {
+      width: moderateScale(10),
+      height: moderateScale(10),
+      borderRadius: moderateScale(10),
+      backgroundColor: colors.primary,
     },
   });
 }

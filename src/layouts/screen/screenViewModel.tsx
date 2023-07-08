@@ -16,10 +16,15 @@ export function useScreenViewModel(
     setIsMenuOpen(false);
   }, []);
 
+  const handleToggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
+  }, []);
+
   return {
     ...props,
     isMenuOpen,
     handleOpenMenu,
     handleCloseMenu,
+    handleToggleMenu,
   };
 }

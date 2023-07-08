@@ -31,7 +31,7 @@ function DrawerMenuRightOptionView(
       <View>{icon}</View>
       <Typography
         weight="Regular"
-        color={active ? colors.primay : colors.text}
+        color={active ? colors.primary : colors.text}
         size={sizes.small}>
         {title}
       </Typography>

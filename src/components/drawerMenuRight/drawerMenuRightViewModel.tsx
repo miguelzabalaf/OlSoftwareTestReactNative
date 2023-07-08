@@ -17,7 +17,7 @@ export function useDrawerMenuRightViewModel(
 
   // Methods
   const getIconColorBy = (screen: string): string => {
-    return screen === currentScreen ? colors.primay : colors.black;
+    return screen === currentScreen ? colors.primary : colors.black;
   };
 
   // States
