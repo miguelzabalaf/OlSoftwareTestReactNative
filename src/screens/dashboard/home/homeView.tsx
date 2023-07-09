@@ -4,14 +4,19 @@ import React from 'react';
 // Components
 import {View} from 'react-native';
 import ScreenLayout from '../../../layouts/screen';
+import Typography from '../../../components/typography';
+import Button from '../../../components/button';
+import Icon from '../../../components/icon';
 
 // Types
 import {HomeScreenProps} from './types';
-import Button from '../../../components/button';
+
+// Utils
 import {colors, sizes} from '../../../utils';
-import Icon from '../../../components/icon';
+
+// Styles
 import {homeViewStyles} from './styles';
-import Typography from '../../../components/typography';
+import ServerChart from '../../../components/serverChart';
 
 function HomeView(props: HomeScreenProps): JSX.Element {
   const {} = props;
@@ -23,10 +28,8 @@ function HomeView(props: HomeScreenProps): JSX.Element {
     containerStadisticItemStyle,
     // Card
     cardContainerStyle,
-    graphycFlagsStyle,
-    flagContainerStyle,
-    badgeStyle,
   } = homeViewStyles();
+
   return (
     <ScreenLayout headerShown>
       <View style={containerContentStyle}>
@@ -106,26 +109,52 @@ function HomeView(props: HomeScreenProps): JSX.Element {
               'Información sobre el consumo y el uso del servidor principal para desarrollo'
             }
           </Typography>
-          <View style={graphycFlagsStyle}>
-            <View style={flagContainerStyle}>
-              <View style={badgeStyle} />
-              <Typography
-                size={sizes.small}
-                weight={'Regular'}
-                color={colors.textMuted}>
-                {'Semama'}
-              </Typography>
-            </View>
-            <View style={flagContainerStyle}>
-              <View style={badgeStyle} />
-              <Typography
-                size={sizes.small}
-                weight={'Regular'}
-                color={colors.textMuted}>
-                {'Semama Anterior'}
-              </Typography>
-            </View>
-          </View>
+          <ServerChart
+            weekData={[
+              {
+                x: '27/07/2022',
+                y: '0',
+              },
+              {
+                x: '29/07/2022',
+                y: '100',
+              },
+              {
+                x: '31/07/2022',
+                y: '0',
+              },
+              {
+                x: '02/08/2022',
+                y: '200',
+              },
+              {
+                x: '04/08/2022',
+                y: '50',
+              },
+            ]}
+            pastWeekData={[
+              {
+                x: '27/07/2022',
+                y: '100',
+              },
+              {
+                x: '29/07/2022',
+                y: '200',
+              },
+              {
+                x: '31/07/2022',
+                y: '0',
+              },
+              {
+                x: '02/08/2022',
+                y: '300',
+              },
+              {
+                x: '04/08/2022',
+                y: '100',
+              },
+            ]}
+          />
         </View>
       </View>
     </ScreenLayout>
