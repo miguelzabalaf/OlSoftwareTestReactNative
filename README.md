@@ -1,80 +1,87 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# OL SOFTWARE: React Native
 
-# Getting Started
+![](https://raw.githubusercontent.com/miguelzabalaf/OlSoftwareTestReactNative/main/assets/images/cover.png)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+I hope and exceed your expectations. This react native(0.71.6) project based on MVVM.
 
-## Step 1: Start the Metro Server
+## Run this project
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+1. Install all dependencies:
 
-To start Metro, run the following command from the _root_ of your React Native project:
+```sh
+yarn install
+```
 
-```bash
-# using npm
-npm start
+2. Install pods:
 
-# OR using Yarn
+```sh
+yarn pod:install
+```
+
+3. Run metro in other terminal tap (Optional):
+
+```sh
 yarn start
 ```
 
-## Step 2: Start your Application
+1. Run in iOS simulator:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
+```sh
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+5. Run in Android simulator:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```sh
+yarn android
+```
 
-## Step 3: Modifying your App
+If you have any problem, these're my actual global versions:
 
-Now that you have successfully run the app, let's modify it.
+- node: v18.15.0
+- yarn: 1.22.19
+- metro: v0.73.9
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Other commands:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+1. Gradlew clean:
 
-## Congratulations! :tada:
+```sh
+yarn android:clean
+```
 
-You've successfully run and modified your React Native App. :partying_face:
+2. Generate APK:
 
-### Now what?
+```sh
+yarn android:build:apk
+```
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+3. Run tests:
 
-# Troubleshooting
+```sh
+yarn test
+```
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Folders
 
-# Learn More
+| Name                               | Description                                                                                                                                                                                    |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `components`, `layouts`, `screens` | Contain all archives related with the UI components his logic, like interfaces, controllers, styles etc.                                                                                       |
+| `navigation`                       | This folder contains all about the navigation in the app, constants, interfaces, architectures, definitions and more.                                                                          |
+| `config`                           | In this folder you can set any configuration (global) for this app, in my case, i set the interceptor configuration to intercept all petitions and set configurations like timeout and headers |
+| `redux`                            | You can see all about: constants, types, interfaces, store, reducers and more related with redux configuration                                                                                 |
 
-To learn more about React Native, take a look at the following resources:
+## Libraries
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-# OlSoftwareTestReactNative
+| Name                                        | Documentation                                                | Description                                                                                                                                                                                                                      |
+| ------------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `react-navigation`                          | https://reactnavigation.org/                                 | It's a [Recomended library](https://reactnative.directory/?search=react-navigation) by react native to manage native navigations, see preferences of navigation by react native [here](https://reactnative.dev/docs/navigation). |
+| `react-redux`                               | https://react-redux.js.org/introduction/getting-started      | It's my preferred library to manage all global data of my application, based on [Redux](https://redux.js.org/).                                                                                                                  |
+| `redux-persist`                             | https://github.com/rt2zz/redux-persist                       | All redux developer needs know about this library, this library help us to persist all o specific data in our local storage (Mobile and Web).                                                                                    |
+| `@react-native-async-storage/async-storage` | https://react-native-async-storage.github.io/async-storage/  | It's a library to manage Data storage of my device (iOS/Android). The principal skill is your persistent storage, and i use that hability for my **persistConfig**.                                                              |
+| `redux-immutable-state-invariant`           | https://github.com/leoasis/redux-immutable-state-invariant   | It's a development tool (middleware of my store) , thats spits an error on you when you try to mutate your state either inside a dispatch or between dispatches.                                                                 |
+| `@react-native-community/netinfo`           | https://github.com/react-native-netinfo/react-native-netinfo | With this library i was subscribed to my conection information and show a banner if i didn't have conection.                                                                                                                     |
+| `axios`                                     | https://axios-http.com/docs/intro                            | It's my preferred library to make HTTP request.                                                                                                                                                                                  |
+| `lodash`                                    | https://lodash.com/                                          | It's a utility library of Javascript with a good performance.                                                                                                                                                                    |
+| `react-native-size-matters`                 | https://github.com/nirsky/react-native-size-matters          | It's a simple tooling to make your scaling a whole lot easier (All styles in this app was created with this library)                                                                                                             |
+| `react-native-svg`                          | https://www.npmjs.com/package/react-native-svg               | Used by adapt SVG images to create a custom components (Of icons)                                                                                                                                                                |
