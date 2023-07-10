@@ -11,5 +11,12 @@ describe('spaces', () => {
     expect(spaces.s12).toBe(12);
     expect(spaces.s14).toBe(14);
     expect(spaces.s16).toBe(16);
+    expect(spaces.s18).toBe(18);
+    expect(spaces.s20).toBe(20);
+    expect(spaces.s22).toBe(22);
+    expect(spaces.s24).toBe(24);
+    expect(spaces.s26).toBe(26);
+    expect(spaces.s28).toBe(28);
+    expect(spaces.s30).toBe(30);
   });
 });

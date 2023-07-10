@@ -1,14 +1,12 @@
 const stacks = {
   auth: 'authStack',
   root: 'rootStack',
-};
-
-const drawers = {
-  home: 'homeDrawer',
+  dashboard: 'dashboardStack',
 };
 
 const screens = {
   login: 'loginScreen',
+  home: 'homeScreen',
 };
 
-export {stacks, drawers, screens};
+export {stacks, screens};
