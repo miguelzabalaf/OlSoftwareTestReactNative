@@ -7,7 +7,7 @@ import ScreenLayout from '../../../layouts/screen';
 import Typography from '../../../components/typography';
 
 // Types
-import {LoginScreenProps} from './types';
+import {LoginViewProps} from './types';
 
 // Styles
 import {loginViewStyles} from './styles';
@@ -17,8 +17,14 @@ import {colors, sizes} from '../../../utils';
 import TextField from '../../../components/textField';
 import Button from '../../../components/button';
 
-function LoginView(props: LoginScreenProps): JSX.Element {
-  const {} = props;
+function LoginView(props: LoginViewProps): JSX.Element {
+  const {
+    userCredentials,
+    onEmailChange,
+    onPasswordChange,
+    onLogin,
+    onLoginDisabled,
+  } = props;
   const {
     formContainerStyle,
     contentStyle,
@@ -42,9 +48,24 @@ function LoginView(props: LoginScreenProps): JSX.Element {
               {'Hola! Bienvenido a OL Software'}
             </Typography>
           </View>
-          <TextField placeholder={'Correo'} />
-          <TextField placeholder={'Contraseña'} secureTextEntry />
-          <Button>{'Ingresar'}</Button>
+          <TextField
+            inputMode="email"
+            autoCapitalize="none"
+            value={userCredentials.email}
+            onChangeText={onEmailChange}
+            placeholder={'Correo'}
+          />
+          <TextField
+            inputMode="text"
+            aria-hidden={true}
+            value={userCredentials.password}
+            onChangeText={onPasswordChange}
+            placeholder={'Contraseña'}
+            secureTextEntry
+          />
+          <Button onPress={onLogin} disabled={onLoginDisabled}>
+            {'Ingresar'}
+          </Button>
           <View>
             <Typography
               textStyles={recoverPasswordContainerStyle}

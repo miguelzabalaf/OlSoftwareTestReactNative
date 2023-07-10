@@ -16,9 +16,8 @@ import DashboardStack from '../dashboard';
 import {defaultScreenOptions} from '../../options';
 
 function RootView(props: RootViewStackProps): JSX.Element {
-  const {} = props;
+  const {isAuthenticated} = props;
   const RootStack = createStackNavigator<RootViewStackParamList>();
-  const isAuthenticated = true;
   return (
     <RootStack.Navigator
       initialRouteName={stacks.auth}

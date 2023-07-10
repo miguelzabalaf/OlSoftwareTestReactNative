@@ -24,19 +24,21 @@ function ButtonView(props: ButtonProps): JSX.Element {
     Icon,
     small,
     textColor,
+    disabled,
   } = props;
   const {containerStyle} = buttonViewStyles({
     loading,
     backgroundColor,
     borderColor,
     small,
+    disabled,
   });
   return (
     <TouchableOpacity
       testID={testIDVariant ?? 'ButtonTestID'}
       style={containerStyle}
       activeOpacity={0.9}
-      disabled={loading}
+      disabled={disabled}
       {...props}>
       {loading ? (
         <ActivityIndicator
