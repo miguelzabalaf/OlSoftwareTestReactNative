@@ -1,6 +1,6 @@
 # OL SOFTWARE: React Native
 
-![](https://raw.githubusercontent.com/miguelzabalaf/OlSoftwareTestReactNative/main/assets/images/cover.png)
+![](https://github.com/miguelzabalaf/OlSoftwareTestReactNative/blob/main/assets/images/cover.png)
 
 I hope and exceed your expectations. This react native(0.71.6) project based on MVVM.
 
